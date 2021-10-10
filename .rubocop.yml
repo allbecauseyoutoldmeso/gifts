@@ -1,0 +1,9 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - 'bin/bundle'
+Style/Documentation:
+  Enabled: false
