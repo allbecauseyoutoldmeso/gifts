@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
@@ -15,7 +16,9 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 2.19'
+  gem 'pry', '~> 0.13.1'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop', '~> 1.19', require: false
   gem 'rubocop-rails', '~> 2.12', require: false
