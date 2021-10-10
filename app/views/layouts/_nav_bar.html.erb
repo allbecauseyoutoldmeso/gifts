@@ -1,0 +1,3 @@
+<% if current_user.present? %>
+  <%= button_to(t('.log_out'), delete_user_sessions_path) %>
+<% end %>

@@ -20,3 +20,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   config.include FactoryBot::Syntax::Methods
 end
+
+Capybara.register_driver :chrome do |app|
+  options = ::Selenium::WebDriver::Chrome::Options.new
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+
+Capybara.javascript_driver = :chrome

@@ -7,7 +7,16 @@ AllCops:
     - 'bin/bundle'
 Style/Documentation:
   Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
 RSpec/MultipleExpectations:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false
+RSpec/Capybara/FeatureMethods:
+  EnabledMethods: [feature, scenario]
