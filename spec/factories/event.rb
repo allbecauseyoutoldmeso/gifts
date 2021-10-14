@@ -2,8 +2,8 @@
 
 FactoryBot.define do
   factory :event do
-    name { 'Christmas' }
-    date { 2.months.from_now }
+    name { Faker::Lorem.word }
+    date { Faker::Time.between(from: 1.week.from_now, to: 3.months.from_now) }
     recipient factory: :recipient
   end
 end

@@ -1,0 +1,10 @@
+<%= content_tag(:ul) do %>
+  <% @events.each do |event| %>
+    <%= content_tag(:li) do %>
+      <%= content_tag(:span, event.name) %>
+      <%= content_tag(:span, event.recipient.name) %>
+      <%= content_tag(:span, event.date) %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= render(partial: 'form', locals: { event: @new_event }) %>

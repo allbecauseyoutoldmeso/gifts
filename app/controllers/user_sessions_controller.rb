@@ -18,11 +18,6 @@ class UserSessionsController < ApplicationController
     end
   end
 
-  def index
-    # temporary action since there's no home page yet
-    authenticate_user
-  end
-
   def delete
     session.delete(:current_user_id)
     redirect_to(new_user_session_path)

@@ -1,0 +1,19 @@
+@mixin flex-direction-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-direction-row {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  @include flex-direction-column;
+  align-items: center;
+}
+
+.nav-bar {
+  @include flex-direction-row;
+  justify-content: flex-end;
+}

@@ -9,6 +9,8 @@ en:
               invalid_credentials: invalid login details
   helpers:
     submit:
+      event:
+        create: Add Event
       user_session:
         create: Log In
   layouts:
@@ -16,6 +18,10 @@ en:
       log_out: Log Out
   simple_form:
     labels:
+      event:
+        date: When
+        name: What
+        recipient_id: Who
       user_session:
         email: Email
         password: Password
