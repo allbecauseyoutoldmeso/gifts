@@ -1,0 +1,15 @@
+<%= content_tag(
+  :h1,
+  t('.title', recipient: @event.recipient.name, event: @event.name)
+) %>
+<%= content_tag(:table) do %>
+  <% @presents.each do |present| %>
+    <%= content_tag(:tr) do %>
+      <%= content_tag(:td, present.name) %>
+    <% end %>
+  <% end %>
+<% end %>
+<%= render(
+  partial: 'form',
+  locals: { event: @event, present: @new_present }
+) %>

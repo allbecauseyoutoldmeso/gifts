@@ -4,6 +4,14 @@ module ApplicationHelper
   attr_reader :current_user
 
   def display_date(date)
-    date.strftime("#{date.day.ordinalize} of %B %Y")
+    date.strftime("#{date.day.ordinalize} %b %y")
+  end
+
+  def presents_link_text(event)
+    if event.presents.any?
+      event.presents.pluck(:name).join(', ')
+    else
+      t('events.index.add_presents')
+    end
   end
 end

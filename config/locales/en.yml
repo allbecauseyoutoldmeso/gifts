@@ -9,11 +9,14 @@ en:
               invalid_credentials: invalid login details
   events:
     index:
+      add_presents: Add Presents
       title: My Events
   helpers:
     submit:
       event:
         create: Add Event
+      present:
+        create: Add Present
       recipient:
         create: Add Person
       user_session:
@@ -23,6 +26,9 @@ en:
       events: Events
       log_out: Log Out
       recipients: People
+  presents:
+    index:
+      title: Presents for %{recipient} (%{event})
   recipients:
     index:
       title: People

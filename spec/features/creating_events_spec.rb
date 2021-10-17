@@ -25,7 +25,7 @@ feature 'creating events', js: true do
     expect(page).to have_selector('td', text: event_name)
     expect(page).to have_selector(
       'td',
-      text: event_date.strftime("#{event_date.day.ordinalize} of %B %Y")
+      text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
     expect(page).to have_selector('td', text: recipient.name)
   end

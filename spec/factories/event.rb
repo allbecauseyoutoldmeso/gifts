@@ -31,8 +31,12 @@ FactoryBot.define do
       'World Peace Day'
     ]
 
+    transient do
+      user { create(:user) }
+    end
+
     name { holidays.sample }
     date { Faker::Time.between(from: 1.week.from_now, to: 3.months.from_now) }
-    recipient { create(:recipient) }
+    recipient { create(:recipient, user: user) }
   end
 end

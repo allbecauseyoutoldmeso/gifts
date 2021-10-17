@@ -5,6 +5,12 @@
       <%= content_tag(:td, event.name) %>
       <%= content_tag(:td, display_date(event.date)) %>
       <%= content_tag(:td, event.recipient.name) %>
+      <%= content_tag(:td) do %>
+        <%= link_to(
+          presents_link_text(event),
+          event_presents_path(event)
+        )%>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
