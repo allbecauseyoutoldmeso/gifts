@@ -4,7 +4,7 @@ require:
 
 AllCops:
   Exclude:
-    - 'bin/bundle'
+    - bin/bundle
 Style/Documentation:
   Enabled: false
 Style/GuardClause:
@@ -14,6 +14,11 @@ Style/IfUnlessModifier:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
+    - db/schema.rb
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+  Exclude:
+    - config/initializers/simple_form.rb
 RSpec/MultipleExpectations:
   Enabled: false
 RSpec/ExampleLength:
