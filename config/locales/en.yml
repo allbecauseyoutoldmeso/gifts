@@ -14,11 +14,18 @@ en:
     submit:
       event:
         create: Add Event
+      recipient:
+        create: Add Person
       user_session:
         create: Log In
   layouts:
     nav_bar:
+      events: Events
       log_out: Log Out
+      recipients: People
+  recipients:
+    index:
+      title: People
   simple_form:
     labels:
       event:

@@ -44,6 +44,20 @@ main {
   justify-content: flex-end;
 }
 
+.nav-item {
+  text-decoration: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 14px;
+  margin: 0 15px;
+  padding: 3px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 table {
   border-collapse: separate;
   border-spacing: 15px;

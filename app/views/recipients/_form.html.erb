@@ -1,0 +1,11 @@
+<%= simple_form_for(
+  recipient,
+  html: {
+    data: {
+      action: 'submit->requests#submitForm'
+    }
+  }
+) do |form| %>
+  <%= form.input(:name, label: false) %>
+  <%= form.submit %>
+<% end %>

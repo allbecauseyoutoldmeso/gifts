@@ -10,7 +10,7 @@ feature 'creating events', js: true do
     event_date = 1.month.from_now.to_date
 
     log_in(user)
-    visit(events_path)
+    click_link(I18n.t('layouts.nav_bar.events'))
     fill_in(I18n.t('simple_form.labels.event.name'), with: event_name)
     fill_in(
       I18n.t('simple_form.labels.event.date'),

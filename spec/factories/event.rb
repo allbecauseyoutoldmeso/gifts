@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :event do
-
     holidays = [
       '420 ',
       'April Fools',

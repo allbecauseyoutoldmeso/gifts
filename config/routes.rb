@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: %i[index create]
+
+  resources :recipients, only: %i[index create]
 end
