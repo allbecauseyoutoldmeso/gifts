@@ -29,4 +29,24 @@ feature 'creating events', js: true do
     )
     expect(page).to have_selector('td', text: recipient.name)
   end
+
+  scenario 'user submits form with blank fields' do
+    user = create(:user)
+
+    log_in(user)
+    click_link(I18n.t('layouts.nav_bar.events'))
+    click_button(I18n.t('helpers.submit.event.create'))
+
+    within('.event_recipient_id') do
+      expect(page).to have_content(I18n.t('errors.messages.blank'))
+    end
+
+    within('.event_name') do
+      expect(page).to have_content(I18n.t('errors.messages.blank'))
+    end
+
+    within('.event_date') do
+      expect(page).to have_content(I18n.t('errors.messages.blank'))
+    end
+  end
 end

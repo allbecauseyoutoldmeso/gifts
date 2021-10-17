@@ -33,6 +33,6 @@ FactoryBot.define do
 
     name { holidays.sample }
     date { Faker::Time.between(from: 1.week.from_now, to: 3.months.from_now) }
-    recipient factory: :recipient
+    recipient { create(:recipient) }
   end
 end

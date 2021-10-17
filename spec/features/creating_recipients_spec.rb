@@ -14,4 +14,14 @@ feature 'creating recipients', js: true do
 
     expect(page).to have_selector('td', text: recipient_name)
   end
+
+  scenario 'user submits form without name' do
+    user = create(:user)
+
+    log_in(user)
+    click_link(I18n.t('layouts.nav_bar.recipients'))
+    click_button(I18n.t('helpers.submit.recipient.create'))
+
+    expect(page).to have_content(I18n.t('errors.messages.blank'))
+  end
 end

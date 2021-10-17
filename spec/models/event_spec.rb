@@ -31,15 +31,24 @@ describe Event do
       )
     end
 
-    it 'is false if recipient is not present' do
+    it 'is false if recipient_id is not present' do
       event = build(:event, recipient: nil)
       expect(event.valid?).to eq(false)
 
       expect(
-        event.errors.messages[:recipient]
+        event.errors.messages[:recipient_id]
       ).to contain_exactly(
-        I18n.t('errors.messages.required')
+        I18n.t('errors.messages.blank')
       )
+    end
+  end
+
+  describe '.persisted' do
+    it 'returns only persisted events' do
+      event_1 = create(:event)
+      _event_2 = build(:event)
+
+      expect(described_class.persisted).to contain_exactly(event_1)
     end
   end
 end
