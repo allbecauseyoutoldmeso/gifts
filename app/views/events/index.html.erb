@@ -1,9 +1,10 @@
-<%= content_tag(:ul) do %>
+<%= content_tag(:h1, t('.title')) %>
+<%= content_tag(:table) do %>
   <% @events.each do |event| %>
-    <%= content_tag(:li) do %>
-      <%= content_tag(:span, event.name) %>
-      <%= content_tag(:span, event.recipient.name) %>
-      <%= content_tag(:span, event.date) %>
+    <%= content_tag(:tr) do %>
+      <%= content_tag(:td, event.name) %>
+      <%= content_tag(:td, display_date(event.date)) %>
+      <%= content_tag(:td, event.recipient.name) %>
     <% end %>
   <% end %>
 <% end %>

@@ -22,8 +22,11 @@ feature 'creating events', js: true do
     )
     click_button(I18n.t('helpers.submit.event.create'))
 
-    expect(page).to have_selector('span', text: event_name)
-    expect(page).to have_selector('span', text: event_date.to_s)
-    expect(page).to have_selector('span', text: recipient.name)
+    expect(page).to have_selector('td', text: event_name)
+    expect(page).to have_selector(
+      'td',
+      text: event_date.strftime("#{event_date.day.ordinalize} of %B %Y")
+    )
+    expect(page).to have_selector('td', text: recipient.name)
   end
 end

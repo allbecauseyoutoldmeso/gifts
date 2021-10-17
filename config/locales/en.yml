@@ -7,6 +7,9 @@ en:
           attributes:
             base:
               invalid_credentials: invalid login details
+  events:
+    index:
+      title: My Events
   helpers:
     submit:
       event:

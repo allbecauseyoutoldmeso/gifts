@@ -8,6 +8,32 @@
   flex-direction: row;
 }
 
+form {
+  @include flex-direction-column;
+  align-items: center;
+}
+
+body {
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+input {
+  font-family: inherit;
+}
+
+.input {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 30px;
+  width: 50px;
+}
+
 main {
   @include flex-direction-column;
   align-items: center;
@@ -16,4 +42,10 @@ main {
 .nav-bar {
   @include flex-direction-row;
   justify-content: flex-end;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 15px;
+  margin-bottom: 15px;
 }
