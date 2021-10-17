@@ -51,4 +51,19 @@ describe Event do
       expect(described_class.persisted).to contain_exactly(event_1)
     end
   end
+
+  describe '.upcoming' do
+    it 'returns events in next 3 months ordered by date' do
+      _event_1 = create(:event, date: 1.day.ago)
+      event_2 = create(:event, date: Date.current)
+      event_3 = create(:event, date: 2.months.from_now)
+      event_4 = create(:event, date: 1.month.from_now)
+      event_5 = create(:event, date: 3.months.from_now)
+      _event_6 = create(:event, date: 3.months.from_now + 1.day)
+
+      expect(described_class.upcoming).to eq(
+        [event_2, event_4, event_3, event_5]
+      )
+    end
+  end
 end

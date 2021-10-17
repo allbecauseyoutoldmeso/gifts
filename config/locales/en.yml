@@ -11,6 +11,8 @@ en:
     index:
       add_presents: Add Presents
       title: My Events
+    upcoming:
+      title: Upcoming Events
   helpers:
     submit:
       event:
@@ -23,9 +25,10 @@ en:
         create: Log In
   layouts:
     nav_bar:
-      events: Events
+      events: All Events
       log_out: Log Out
       recipients: People
+      upcoming_events: Upcoming Events
   presents:
     index:
       title: Presents for %{recipient} (%{event})

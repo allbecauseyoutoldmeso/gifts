@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
-  before_action :assign_events
+  before_action :assign_events, only: %i[index create]
+
+  def upcoming
+    @events = current_user.events.upcoming
+  end
 
   def index
     @new_event = events.new
