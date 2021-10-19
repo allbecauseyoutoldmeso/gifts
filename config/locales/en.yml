@@ -19,6 +19,7 @@ en:
         create: Add Event
       present:
         create: Add Present
+        delete: Delete
       recipient:
         create: Add Person
       user_session:
@@ -31,6 +32,7 @@ en:
       upcoming_events: Upcoming Events
   presents:
     index:
+      delete: Delete
       title: Presents for %{recipient} (%{event})
   recipients:
     index:

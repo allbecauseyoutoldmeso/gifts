@@ -6,6 +6,12 @@
   <% @presents.each do |present| %>
     <%= content_tag(:tr) do %>
       <%= content_tag(:td, present.name) %>
+      <%= content_tag(:td) do %>
+        <%= render(
+          partial: 'delete',
+          locals: { event: @event, present: present }
+        ) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

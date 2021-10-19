@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :events, only: %i[index create] do
     get :upcoming, on: :collection
-    resources :presents, only: %i[index create]
+    resources :presents, only: %i[index create destroy]
   end
 
   resources :recipients, only: %i[index create]

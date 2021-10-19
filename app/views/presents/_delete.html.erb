@@ -1,0 +1,8 @@
+<%= simple_form_for(
+  [event, present],
+  url: event_present_path(event, present),
+  method: :delete,
+  data: { action: 'click->requests#submitForm' }
+) do |form| %>
+  <%= form.submit(t('presents.index.delete')) %>
+<% end %>
