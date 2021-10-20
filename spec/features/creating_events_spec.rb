@@ -14,7 +14,7 @@ feature 'creating events', js: true do
     fill_in(I18n.t('simple_form.labels.event.name'), with: event_name)
     fill_in(
       I18n.t('simple_form.labels.event.date'),
-      with: event_date.strftime('%d/%m/%Y')
+      with: input_date(event_date)
     )
     select(
       recipient.name,

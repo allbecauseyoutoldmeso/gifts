@@ -12,4 +12,9 @@ module Helpers
 
     click_button(I18n.t('helpers.submit.user_session.create'))
   end
+
+  def input_date(date)
+    format = ENV['INPUT_DATE_FORMAT'] || '%d/%m/%Y'
+    date.strftime(format)
+  end
 end
