@@ -1,24 +1,15 @@
-# README
+# Gift List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Local Set Up
 
-Things you may want to cover:
+* Clone and `cd` into this repo
+* `bundle install`
+* `bundle exec rails db:setup`
+* `bundle exec rspec`
+* `bundle exec rails s`
 
-* Ruby version
+## Linters
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* `rubocop`
+* `npx eslint .`
+* `i18n-tasks health`
