@@ -31,13 +31,4 @@ describe Recipient do
       )
     end
   end
-
-  describe '.persisted' do
-    it 'returns only persisted recipients' do
-      recipient_1 = create(:recipient)
-      _recipient_2 = build(:recipient)
-
-      expect(described_class.persisted).to contain_exactly(recipient_1)
-    end
-  end
 end

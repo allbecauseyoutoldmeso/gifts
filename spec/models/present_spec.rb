@@ -20,13 +20,4 @@ describe Present do
       )
     end
   end
-
-  describe '.persisted' do
-    it 'returns only persisted presents' do
-      present_1 = create(:present)
-      _present_2 = build(:present)
-
-      expect(described_class.persisted).to contain_exactly(present_1)
-    end
-  end
 end

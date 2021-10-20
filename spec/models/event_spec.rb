@@ -43,15 +43,6 @@ describe Event do
     end
   end
 
-  describe '.persisted' do
-    it 'returns only persisted events' do
-      event_1 = create(:event)
-      _event_2 = build(:event)
-
-      expect(described_class.persisted).to contain_exactly(event_1)
-    end
-  end
-
   describe '.upcoming' do
     it 'returns events in next 3 months ordered by date' do
       _event_1 = create(:event, date: 1.day.ago)

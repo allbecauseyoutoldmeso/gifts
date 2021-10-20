@@ -18,7 +18,7 @@ class RecipientsController < ApplicationController
   attr_reader :recipients
 
   def assign_recipients
-    @recipients = current_user.recipients.persisted
+    @recipients = current_user.recipients.all
   end
 
   def recipient_params

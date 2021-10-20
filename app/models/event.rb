@@ -6,8 +6,6 @@ class Event < ApplicationRecord
 
   validates :name, :date, :recipient_id, presence: true
 
-  scope :persisted, -> { where.not(id: nil) }
-
   scope :upcoming, lambda {
     where(date: Date.current..3.months.from_now).order(:date)
   }

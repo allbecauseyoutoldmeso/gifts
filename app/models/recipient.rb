@@ -5,6 +5,4 @@ class Recipient < ApplicationRecord
   has_many :events, dependent: :destroy
 
   validates :name, presence: true
-
-  scope :persisted, -> { where.not(id: nil) }
 end

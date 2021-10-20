@@ -28,7 +28,7 @@ class PresentsController < ApplicationController
   end
 
   def assign_presents
-    @presents = event.presents.persisted
+    @presents = event.presents.all
   end
 
   def assign_new_present

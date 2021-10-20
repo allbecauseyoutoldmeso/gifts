@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   attr_reader :events
 
   def assign_events
-    @events = current_user.events.persisted
+    @events = current_user.events.all
   end
 
   def event_params
