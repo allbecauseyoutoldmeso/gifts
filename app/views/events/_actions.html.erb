@@ -1,0 +1,20 @@
+<%= content_tag(:div, class: 'event-actions') do %>
+  <%= content_tag(
+    :button,
+    t('events.index.search_events'),
+    data: {
+      action: 'click->show-hide#toggle',
+      show_hide_id_param: 'event-search'
+    },
+    class: 'show-hide-button'
+  ) %>
+  <%= content_tag(
+    :button,
+    t('events.index.add_event'),
+    data: {
+      action: 'click->show-hide#toggle',
+      show_hide_id_param: 'new-event'
+    },
+    class: 'show-hide-button'
+  ) %>
+<% end %>

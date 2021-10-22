@@ -1,4 +1,13 @@
 <%= content_tag(:h1, t('.title')) %>
-<%= render(partial: 'event_searches/new') %>
-<%= render(partial: 'events/new', locals: { new_event: @new_event }) %>
+<%= content_tag(:div, data: { controller: 'show-hide' }) do %>
+  <%= render(partial: 'events/actions') %>
+  <%= render(
+    partial: 'event_searches/new',
+    locals: { hidden: !@show_event_search_form}
+  ) %>
+  <%= render(
+    partial: 'events/new',
+    locals: { new_event: @new_event, hidden: !@show_new_event_form }
+  ) %>
+<%end %>
 <%= render(partial: 'events/table', locals: { events: @events }) %>

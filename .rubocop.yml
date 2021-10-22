@@ -19,6 +19,9 @@ Naming/VariableNumber:
   EnforcedStyle: snake_case
   Exclude:
     - config/initializers/simple_form.rb
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - app/controllers/concerns/*
 RSpec/MultipleExpectations:
   Enabled: false
 RSpec/ExampleLength:

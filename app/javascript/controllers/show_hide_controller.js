@@ -3,9 +3,9 @@ import { Controller } from 'stimulus'
 export default class extends Controller {
   static targets = ['toggleable']
 
-  toggle() {
+  toggle(event) {
     this.toggleableTargets.forEach(target => {
-      if (this.isHidden(target)) {
+      if (target.id == event.params.id) {
         this.show(target)
       } else {
         this.hide(target)
@@ -19,10 +19,6 @@ export default class extends Controller {
 
   show(target) {
     target.classList.remove(this.hiddenClass())
-  }
-
-  isHidden(target) {
-    return target.classList.contains(this.hiddenClass())
   }
 
   hiddenClass() {

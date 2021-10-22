@@ -19,6 +19,11 @@ a {
   color: $pink;
 }
 
+.event-actions {
+  @include flex-direction-row;
+  justify-content: center;
+}
+
 form {
   @media (min-width: 600px) {
     @include flex-direction-row;
@@ -110,7 +115,6 @@ main {
   border: 1px solid $pink;
   border-radius: 5px;
   padding: 5px;
-  width: 80%;
   margin: 5px 45px;
 }
 

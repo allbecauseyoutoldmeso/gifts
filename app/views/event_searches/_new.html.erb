@@ -1,21 +1,8 @@
 <%= content_tag(
   :div,
-  data: { controller: 'show-hide' },
-  class: 'show-hide-section'
+  data: { show_hide_target: 'toggleable' },
+  class: "show-hide-section #{'hidden' if hidden}",
+  id: 'event-search'
 ) do %>
-  <%= content_tag(
-    :button,
-    t('events.index.search_events'),
-    data: {
-      action: 'click->show-hide#toggle'
-    },
-    class: 'show-hide-button'
-  ) %>
-  <%= content_tag(
-    :div,
-    data: { show_hide_target: 'toggleable' },
-    class: ('hidden')
-  ) do %>
-    <%= render(partial: 'event_searches/form') %>
-  <% end %>
+  <%= render(partial: 'event_searches/form') %>
 <% end %>
