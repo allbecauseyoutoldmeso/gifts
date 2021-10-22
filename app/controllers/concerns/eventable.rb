@@ -8,6 +8,7 @@ module Eventable
     before_action :assign_new_event, only: %i[index create]
     before_action :assign_show_event_form, only: %i[index create]
     before_action :assign_show_search_form, only: %i[index create]
+    before_action :assign_event_search, only: %i[index create]
 
     attr_reader :events
   end
@@ -28,5 +29,9 @@ module Eventable
 
   def assign_show_search_form
     @show_search_form = false
+  end
+
+  def assign_event_search
+    @event_search = EventSearch.new(current_user)
   end
 end

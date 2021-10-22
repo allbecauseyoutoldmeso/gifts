@@ -2,8 +2,11 @@
 
 class EventSearch
   include ActiveModel::Model
+  include Dateable
 
-  attr_accessor :name, :start_date, :end_date, :recipient_id
+  attr_accessor :name, :recipient_id
+
+  date_attributes :start_date, :end_date
 
   def initialize(user)
     @user = user

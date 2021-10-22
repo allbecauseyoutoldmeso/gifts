@@ -3,6 +3,11 @@
 require 'rails_helper'
 
 describe EventSearch do
+  it_behaves_like 'dateable' do
+    let(:object) { build(:event_search) }
+    let(:dateable_attributes) { %i[start_date end_date] }
+  end
+
   describe '#valid?' do
     it 'is true for factory' do
       event_search = build(:event_search)

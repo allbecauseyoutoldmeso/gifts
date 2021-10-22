@@ -4,5 +4,8 @@
   class: "show-hide-section #{'hidden' if hidden}",
   id: 'event-search'
 ) do %>
-  <%= render(partial: 'event_searches/form') %>
+  <%= render(
+    partial: 'event_searches/form',
+    locals: { event_search: event_search }
+  ) %>
 <% end %>

@@ -3,7 +3,7 @@
   <%= render(partial: 'events/actions') %>
   <%= render(
     partial: 'event_searches/new',
-    locals: { hidden: !@show_event_search_form}
+    locals: { event_search: @event_search, hidden: !@show_event_search_form}
   ) %>
   <%= render(
     partial: 'events/new',
