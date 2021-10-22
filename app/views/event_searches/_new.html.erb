@@ -1,11 +1,12 @@
 <%= content_tag(
   :div,
   data: { show_hide_target: 'toggleable' },
-  class: "show-hide-section #{'hidden' if hidden}",
+  class: "show-hide-section event-search #{'hidden' if hidden}",
   id: 'event-search'
 ) do %>
   <%= render(
     partial: 'event_searches/form',
     locals: { event_search: event_search }
   ) %>
+  <%= render(partial: 'event_searches/clear') %>
 <% end %>

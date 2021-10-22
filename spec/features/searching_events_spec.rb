@@ -16,6 +16,10 @@ feature 'searching events', js: true do
 
     expect(page).to have_selector('td', text: event_1.name)
     expect(page).not_to have_selector('td', text: event_2.name)
+
+    click_button(t('events.index.clear_filters'))
+
+    expect(page).to have_selector('td', text: event_2.name)
   end
 
   scenario 'user searches by start_date' do
@@ -34,6 +38,10 @@ feature 'searching events', js: true do
 
     expect(page).to have_selector('td', text: event_2.name)
     expect(page).not_to have_selector('td', text: event_1.name)
+
+    click_button(t('events.index.clear_filters'))
+
+    expect(page).to have_selector('td', text: event_1.name)
   end
 
   scenario 'user searches by end_date' do
@@ -52,6 +60,10 @@ feature 'searching events', js: true do
 
     expect(page).to have_selector('td', text: event_1.name)
     expect(page).not_to have_selector('td', text: event_2.name)
+
+    click_button(t('events.index.clear_filters'))
+
+    expect(page).to have_selector('td', text: event_2.name)
   end
 
   scenario 'user searches by recipient' do
@@ -71,5 +83,9 @@ feature 'searching events', js: true do
 
     expect(page).to have_selector('td', text: event_1.name)
     expect(page).not_to have_selector('td', text: event_2.name)
+
+    click_button(t('events.index.clear_filters'))
+
+    expect(page).to have_selector('td', text: event_2.name)
   end
 end

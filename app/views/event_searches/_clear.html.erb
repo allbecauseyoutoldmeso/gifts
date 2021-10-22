@@ -1,0 +1,14 @@
+<%= simple_form_for(
+  EventSearch.new(current_user),
+  html: {
+    data: {
+      action: 'submit->requests#submitForm'
+    }
+  }
+) do |form| %>
+  <%= form.input(:name, as: :hidden) %>
+  <%= form.input(:recipient_id, as: :hidden) %>
+  <%= form.input(:start_date, as: :hidden) %>
+  <%= form.input(:end_date, as: :hidden) %>
+  <%= form.submit(value: t('events.index.clear_filters')) %>
+<% end %>

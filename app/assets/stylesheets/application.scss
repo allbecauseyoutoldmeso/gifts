@@ -24,14 +24,24 @@ a {
   justify-content: center;
 }
 
+.event-search {
+  @media (min-width: 600px) {
+    @include flex-direction-row;
+  }
+}
+
 form {
+  @include flex-direction-column;
+
   @media (min-width: 600px) {
     @include flex-direction-row;
     align-items: flex-end;
     justify-content: space-between;
-  }
 
-  @include flex-direction-column;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
 }
 
 body {
@@ -55,6 +65,10 @@ input {
   @include flex-direction-column;
   align-items: flex-start;
   margin: 0 10px;
+
+  &.hidden {
+    margin: 0;
+  }
 }
 
 input[type=submit] {
