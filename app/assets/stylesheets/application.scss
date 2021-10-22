@@ -20,12 +20,18 @@ a {
 }
 
 form {
-  @include flex-direction-column;
-  align-items: center;
+  @include flex-direction-row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 body {
   font-family: 'Averia Serif Libre', cursive;
+}
+
+.hidden {
+  display: none;
 }
 
 input {
@@ -33,11 +39,9 @@ input {
 }
 
 .input {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 10px;
+  @include flex-direction-column;
+  align-items: flex-start;
+  margin: 0 10px;
 }
 
 label {
@@ -70,9 +74,23 @@ main {
   }
 }
 
-.recipient_name, .present_name {
-  @include flex-direction-column;
-  align-items: center;
+.show-hide-button {
+  color: $pink;
+  border: none;
+  background: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.show-hide-section {
+  border: 1px solid $pink;
+  border-radius: 5px;
+  padding: 5px;
+  width: 80%;
+  margin: 0 45px;
 }
 
 table {

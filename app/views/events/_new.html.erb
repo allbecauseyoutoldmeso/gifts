@@ -1,0 +1,21 @@
+<%= content_tag(
+  :div,
+  data: { controller: 'show-hide' },
+  class: 'show-hide-section'
+) do %>
+  <%= content_tag(
+    :button,
+    t('events.index.add_event'),
+    data: {
+      action: 'click->show-hide#toggle'
+    },
+    class: 'show-hide-button'
+  ) %>
+  <%= content_tag(
+    :div,
+    data: { show_hide_target: 'toggleable' },
+    class: ('hidden' unless new_event.errors.any?)
+  ) do %>
+    <%= render(partial: 'form', locals: { event: new_event }) %>
+  <% end %>
+<% end %>

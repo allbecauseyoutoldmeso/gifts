@@ -9,14 +9,15 @@ en:
               invalid_credentials: invalid login details
   events:
     index:
+      add_event: Add Event
       add_presents: Add Presents
-      title: My Events
+      title: Manage Events
     upcoming:
       title: Upcoming Events
   helpers:
     submit:
       event:
-        create: Add Event
+        create: Add
       present:
         create: Add Present
         delete: Delete
@@ -26,7 +27,7 @@ en:
         create: Log In
   layouts:
     nav_bar:
-      events: All Events
+      events: Manage Events
       log_out: Log Out
       recipients: People
       upcoming_events: Upcoming Events

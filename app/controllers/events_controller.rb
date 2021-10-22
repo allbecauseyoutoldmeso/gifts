@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   attr_reader :events
 
   def assign_events
-    @events = current_user.events.all
+    @events = current_user.events.all.order(created_at: :desc)
   end
 
   def event_params

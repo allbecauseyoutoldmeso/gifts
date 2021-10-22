@@ -11,6 +11,7 @@ feature 'creating events', js: true do
 
     log_in(user)
     click_link(I18n.t('layouts.nav_bar.events'))
+    click_button(I18n.t('events.index.add_event'))
     fill_in(I18n.t('simple_form.labels.event.name'), with: event_name)
     fill_in(
       I18n.t('simple_form.labels.event.date'),
@@ -35,6 +36,7 @@ feature 'creating events', js: true do
 
     log_in(user)
     click_link(I18n.t('layouts.nav_bar.events'))
+    click_button(I18n.t('events.index.add_event'))
     click_button(I18n.t('helpers.submit.event.create'))
 
     within('.event_recipient_id') do
