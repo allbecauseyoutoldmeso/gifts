@@ -16,7 +16,7 @@ describe Event do
       expect(
         event.errors.messages[:name]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -27,7 +27,7 @@ describe Event do
       expect(
         event.errors.messages[:date]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -38,7 +38,7 @@ describe Event do
       expect(
         event.errors.messages[:recipient_id]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
   end

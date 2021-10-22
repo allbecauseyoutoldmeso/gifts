@@ -16,7 +16,7 @@ describe UserSession do
       expect(
         user_session.errors.messages[:email]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -27,7 +27,7 @@ describe UserSession do
       expect(
         user_session.errors.messages[:password]
       ).to include(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -39,7 +39,7 @@ describe UserSession do
       expect(
         user_session.errors.messages[:base]
       ).to include(
-        I18n.t(
+        t(
           'activemodel.errors.models.user_session.attributes.base.invalid_credentials'
         )
       )
@@ -53,7 +53,7 @@ describe UserSession do
       expect(
         user_session.errors.messages[:base]
       ).to include(
-        I18n.t(
+        t(
           'activemodel.errors.models.user_session.attributes.base.invalid_credentials'
         )
       )

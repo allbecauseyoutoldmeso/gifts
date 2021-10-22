@@ -16,7 +16,7 @@ describe Recipient do
       expect(
         recipient.errors.messages[:name]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -27,7 +27,7 @@ describe Recipient do
       expect(
         recipient.errors.messages[:user]
       ).to contain_exactly(
-        I18n.t('errors.messages.required')
+        t('errors.messages.required')
       )
     end
   end

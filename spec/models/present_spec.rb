@@ -16,7 +16,7 @@ describe Present do
       expect(
         present.errors.messages[:name]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
   end

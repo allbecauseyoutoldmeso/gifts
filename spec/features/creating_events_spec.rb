@@ -10,18 +10,18 @@ feature 'creating events', js: true do
     event_date = 1.month.from_now.to_date
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.events'))
-    click_button(I18n.t('events.index.add_event'))
-    fill_in(I18n.t('simple_form.labels.event.name'), with: event_name)
+    click_link(t('layouts.nav_bar.events'))
+    click_button(t('events.index.add_event'))
+    fill_in(t('simple_form.labels.event.name'), with: event_name)
     fill_in(
-      I18n.t('simple_form.labels.event.date'),
+      t('simple_form.labels.event.date'),
       with: input_date(event_date)
     )
     select(
       recipient.name,
-      from: I18n.t('simple_form.labels.event.recipient_id')
+      from: t('simple_form.labels.event.recipient_id')
     )
-    click_button(I18n.t('helpers.submit.event.create'))
+    click_button(t('helpers.submit.event.create'))
 
     expect(page).to have_selector('td', text: event_name)
     expect(page).to have_selector(
@@ -35,20 +35,20 @@ feature 'creating events', js: true do
     user = create(:user)
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.events'))
-    click_button(I18n.t('events.index.add_event'))
-    click_button(I18n.t('helpers.submit.event.create'))
+    click_link(t('layouts.nav_bar.events'))
+    click_button(t('events.index.add_event'))
+    click_button(t('helpers.submit.event.create'))
 
     within('.event_recipient_id') do
-      expect(page).to have_content(I18n.t('errors.messages.blank'))
+      expect(page).to have_content(t('errors.messages.blank'))
     end
 
     within('.event_name') do
-      expect(page).to have_content(I18n.t('errors.messages.blank'))
+      expect(page).to have_content(t('errors.messages.blank'))
     end
 
     within('.event_date') do
-      expect(page).to have_content(I18n.t('errors.messages.blank'))
+      expect(page).to have_content(t('errors.messages.blank'))
     end
   end
 end

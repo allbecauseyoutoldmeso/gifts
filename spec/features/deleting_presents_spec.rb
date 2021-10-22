@@ -14,7 +14,7 @@ feature 'deleting presents', js: true do
     present_1_row = find('tr', text: present_1.name)
 
     within(present_1_row) do
-      click_button(I18n.t('presents.index.delete'))
+      click_button(t('presents.index.delete'))
     end
 
     expect(page).not_to have_selector('td', text: present_1.name)

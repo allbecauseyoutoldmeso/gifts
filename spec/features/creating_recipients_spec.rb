@@ -8,9 +8,9 @@ feature 'creating recipients', js: true do
     recipient_name = 'Jane'
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.recipients'))
+    click_link(t('layouts.nav_bar.recipients'))
     fill_in('recipient_name', with: recipient_name)
-    click_button(I18n.t('helpers.submit.recipient.create'))
+    click_button(t('helpers.submit.recipient.create'))
 
     expect(page).to have_selector('td', text: recipient_name)
   end
@@ -19,9 +19,9 @@ feature 'creating recipients', js: true do
     user = create(:user)
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.recipients'))
-    click_button(I18n.t('helpers.submit.recipient.create'))
+    click_link(t('layouts.nav_bar.recipients'))
+    click_button(t('helpers.submit.recipient.create'))
 
-    expect(page).to have_content(I18n.t('errors.messages.blank'))
+    expect(page).to have_content(t('errors.messages.blank'))
   end
 end

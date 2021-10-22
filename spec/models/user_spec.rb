@@ -16,7 +16,7 @@ describe User do
       expect(
         user.errors.messages[:email]
       ).to contain_exactly(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
 
@@ -27,7 +27,7 @@ describe User do
       expect(
         user.errors.messages[:password]
       ).to include(
-        I18n.t('errors.messages.blank')
+        t('errors.messages.blank')
       )
     end
   end

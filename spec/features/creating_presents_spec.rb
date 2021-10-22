@@ -9,10 +9,10 @@ feature 'creating presents', js: true do
     present_name = 'Slime Kit'
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.events'))
-    click_link(I18n.t('events.index.add_presents'))
+    click_link(t('layouts.nav_bar.events'))
+    click_link(t('events.index.add_presents'))
     fill_in('present_name', with: present_name)
-    click_button(I18n.t('helpers.submit.present.create'))
+    click_button(t('helpers.submit.present.create'))
 
     expect(page).to have_selector('td', text: present_name)
   end
@@ -23,8 +23,8 @@ feature 'creating presents', js: true do
 
     log_in(user)
     visit(event_presents_path(event))
-    click_button(I18n.t('helpers.submit.present.create'))
+    click_button(t('helpers.submit.present.create'))
 
-    expect(page).to have_content(I18n.t('errors.messages.blank'))
+    expect(page).to have_content(t('errors.messages.blank'))
   end
 end

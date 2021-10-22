@@ -19,7 +19,7 @@ feature 'viewing upcoming events', js: true do
     )
 
     log_in(user)
-    click_link(I18n.t('layouts.nav_bar.upcoming_events'))
+    click_link(t('layouts.nav_bar.upcoming_events'))
     expect(page).to have_content(event_1.name)
     expect(page).not_to have_content(event_2.name)
   end
