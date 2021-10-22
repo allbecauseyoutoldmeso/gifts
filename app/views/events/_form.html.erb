@@ -9,5 +9,6 @@
   <%= form.input(:recipient_id, collection: current_user.recipients) %>
   <%= form.input(:name) %>
   <%= form.input(:date, as: :date, html5: true) %>
+  <%= form.input(:recurring) %>
   <%= form.submit %>
 <% end %>

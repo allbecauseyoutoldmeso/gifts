@@ -11,6 +11,8 @@ en:
     index:
       add_event: Add Event
       add_presents: Add Presents
+      one_off: One Off
+      recurring: Recurring
       search_events: Search Events
       title: Manage Events
     upcoming:
@@ -47,6 +49,7 @@ en:
         date: When
         name: What
         recipient_id: Who
+        recurring: Recurring
       event_search:
         end_date: To
         name: Event

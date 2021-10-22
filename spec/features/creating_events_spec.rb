@@ -21,6 +21,7 @@ feature 'creating events', js: true do
       recipient.name,
       from: t('simple_form.labels.event.recipient_id')
     )
+    check(t('simple_form.labels.event.recurring'))
     click_button(t('helpers.submit.event.create'))
 
     expect(page).to have_selector('td', text: event_name)
@@ -28,6 +29,7 @@ feature 'creating events', js: true do
       'td',
       text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
+    expect(page).to have_selector('td', text: t('events.index.recurring'))
     expect(page).to have_selector('td', text: recipient.name)
   end
 

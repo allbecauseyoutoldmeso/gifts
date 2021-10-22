@@ -26,6 +26,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:recipient_id, :name, :date)
+    params.require(:event).permit(:recipient_id, :name, :date, :recurring)
   end
 end

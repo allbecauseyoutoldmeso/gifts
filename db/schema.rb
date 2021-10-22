@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-ActiveRecord::Schema.define(version: 20_211_017_161_201) do
+ActiveRecord::Schema.define(version: 20_211_022_121_941) do
   enable_extension 'plpgsql'
 
   create_table 'events', force: :cascade do |t|
@@ -9,6 +9,7 @@ ActiveRecord::Schema.define(version: 20_211_017_161_201) do
     t.bigint 'recipient_id'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.boolean 'recurring', default: false
     t.index ['recipient_id'], name: 'index_events_on_recipient_id'
   end
 

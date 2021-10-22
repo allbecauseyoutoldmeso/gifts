@@ -7,6 +7,10 @@ module ApplicationHelper
     date.strftime("#{date.day.ordinalize} %b %y")
   end
 
+  def display_recurring(recurring)
+    recurring ? t('events.index.recurring') : t('events.index.one_off')
+  end
+
   def presents_link_text(event)
     if event.presents.any?
       event.presents.pluck(:name).join(', ')

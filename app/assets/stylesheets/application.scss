@@ -20,14 +20,22 @@ a {
 }
 
 form {
-  @include flex-direction-row;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  @media (min-width: 600px) {
+    @include flex-direction-row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  @include flex-direction-column;
 }
 
 body {
   font-family: 'Averia Serif Libre', cursive;
+}
+
+.boolean {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .hidden {
@@ -44,6 +52,15 @@ input {
   margin: 0 10px;
 }
 
+input[type=submit] {
+  max-width: fit-content;
+  margin: 10px;
+
+  @media (min-width: 600px) {
+    margin: 0;
+  }
+}
+
 label {
   margin-right: 30px;
   width: 50px;
@@ -56,7 +73,11 @@ main {
 
 .nav-bar {
   @include flex-direction-row;
-  justify-content: flex-end;
+  align-items: flex-end;
+
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+  }
 }
 
 .nav-item {
@@ -65,7 +86,7 @@ main {
   border: none;
   color: black;
   font-size: 14px;
-  margin: 0 15px;
+  margin: 0 15px !important;
   padding: 3px;
 
   &:hover {
