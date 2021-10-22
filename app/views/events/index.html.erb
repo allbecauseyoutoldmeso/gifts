@@ -1,3 +1,4 @@
 <%= content_tag(:h1, t('.title')) %>
-<%= render(partial: 'new', locals: { new_event: @new_event }) %>
-<%= render(partial: 'table', locals: { events: @events }) %>
+<%= render(partial: 'event_searches/new') %>
+<%= render(partial: 'events/new', locals: { new_event: @new_event }) %>
+<%= render(partial: 'events/table', locals: { events: @events }) %>

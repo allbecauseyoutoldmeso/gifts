@@ -11,6 +11,7 @@ en:
     index:
       add_event: Add Event
       add_presents: Add Presents
+      search_events: Search Events
       title: Manage Events
     upcoming:
       title: Upcoming Events
@@ -18,6 +19,8 @@ en:
     submit:
       event:
         create: Add
+      event_search:
+        create: Search
       present:
         create: Add Present
         delete: Delete
@@ -44,6 +47,11 @@ en:
         date: When
         name: What
         recipient_id: Who
+      event_search:
+        end_date: To
+        name: Event
+        recipient_id: Who
+        start_date: From
       user_session:
         email: Email
         password: Password

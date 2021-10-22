@@ -5,7 +5,7 @@
 ) do %>
   <%= content_tag(
     :button,
-    t('events.index.add_event'),
+    t('events.index.search_events'),
     data: {
       action: 'click->show-hide#toggle'
     },
@@ -14,8 +14,8 @@
   <%= content_tag(
     :div,
     data: { show_hide_target: 'toggleable' },
-    class: ('hidden' unless new_event.errors.any?)
+    class: ('hidden')
   ) do %>
-    <%= render(partial: 'events/form', locals: { event: new_event }) %>
+    <%= render(partial: 'event_searches/form') %>
   <% end %>
 <% end %>

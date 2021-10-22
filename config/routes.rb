@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :presents, only: %i[index create destroy]
   end
 
+  resources :event_searches, only: %i[create]
+
   resources :recipients, only: %i[index create]
 end
