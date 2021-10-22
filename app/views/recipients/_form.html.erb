@@ -6,6 +6,10 @@
     }
   }
 ) do |form| %>
-  <%= form.input(:name, label: false) %>
+  <%= form.input(
+    :name,
+    label: false,
+    input_html: { data: { focus_target: 'focusable' } }
+  ) %>
   <%= form.submit %>
 <% end %>
