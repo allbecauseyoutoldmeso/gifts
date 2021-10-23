@@ -4,17 +4,19 @@
     t('events.index.search_events'),
     data: {
       action: 'click->show-hide#toggle',
-      show_hide_id_param: 'event-search'
+      show_hide_id_param: 'event-search',
+      show_hide_target: 'selectable'
     },
-    class: 'show-hide-button'
+    class: "show-hide-button #{'selected' if show_event_search_form}"
   ) %>
   <%= content_tag(
     :button,
     t('events.index.add_event'),
     data: {
       action: 'click->show-hide#toggle',
-      show_hide_id_param: 'new-event'
+      show_hide_id_param: 'new-event',
+      show_hide_target: 'selectable'
     },
-    class: 'show-hide-button'
+    class: "show-hide-button #{'selected' if show_new_event_form}"
   ) %>
 <% end %>

@@ -10,10 +10,8 @@ en:
   events:
     index:
       add_event: Add Event
-      add_presents: Add Presents
       clear_filters: Clear Filters
-      one_off: One Off
-      recurring: Recurring
+      presents: Presents
       search_events: Search Events
       title: Manage Events
     upcoming:

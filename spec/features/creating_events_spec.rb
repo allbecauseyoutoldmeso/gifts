@@ -29,7 +29,6 @@ feature 'creating events', js: true do
       'td',
       text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
-    expect(page).to have_selector('td', text: t('events.index.recurring'))
     expect(page).to have_selector('td', text: recipient.name)
   end
 

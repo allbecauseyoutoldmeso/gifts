@@ -10,7 +10,7 @@ feature 'creating presents', js: true do
 
     log_in(user)
     click_link(t('layouts.nav_bar.events'))
-    click_link(t('events.index.add_presents'))
+    click_link(t('events.index.presents'))
     fill_in('present_name', with: present_name)
     click_button(t('helpers.submit.present.create'))
 

@@ -1,6 +1,12 @@
 <%= content_tag(:h1, t('.title')) %>
 <%= content_tag(:div, data: { controller: 'show-hide' }) do %>
-  <%= render(partial: 'events/actions') %>
+  <%= render(
+    partial: 'events/actions',
+    locals: {
+      show_event_search_form: @show_event_search_form,
+      show_new_event_form: @show_new_event_form
+    }
+  ) %>
   <%= render(
     partial: 'event_searches/new',
     locals: { event_search: @event_search, hidden: !@show_event_search_form}
