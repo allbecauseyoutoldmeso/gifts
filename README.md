@@ -11,5 +11,4 @@
 ## Linters
 
 * `rubocop`
-* `npx eslint .`
 * `i18n-tasks health`

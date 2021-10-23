@@ -13,9 +13,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/eslint-parser": "^7.15.8",
-    "eslint": "^8.0.1",
     "webpack-dev-server": "^3"
   }
 }
