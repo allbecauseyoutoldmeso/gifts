@@ -4,5 +4,8 @@
   class: "show-hide-section #{'hidden' if hidden}",
   id: 'new-event'
 ) do %>
-  <%= render(partial: 'events/form', locals: { event: new_event }) %>
+  <%= render(
+    partial: 'event_presenters/form',
+    locals: { event_presenter: new_event_presenter }
+  ) %>
 <% end %>

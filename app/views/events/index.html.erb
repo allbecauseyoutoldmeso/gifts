@@ -12,8 +12,11 @@
     locals: { event_search: @event_search, hidden: !@show_event_search_form}
   ) %>
   <%= render(
-    partial: 'events/new',
-    locals: { new_event: @new_event, hidden: !@show_new_event_form }
+    partial: 'event_presenters/new',
+    locals: {
+      new_event_presenter: @new_event_presenter,
+      hidden: !@show_new_event_form
+    }
   ) %>
 <%end %>
 <%= render(partial: 'events/table', locals: { events: @events }) %>

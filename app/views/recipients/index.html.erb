@@ -1,9 +1,0 @@
-<%= content_tag(:h1, t('.title')) %>
-<%= content_tag(:table) do %>
-  <% @recipients.each do |recipient| %>
-    <%= content_tag(:tr) do %>
-      <%= content_tag(:td, recipient.name) %>
-    <% end %>
-  <% end %>
-<% end %>
-<%= render(partial: 'form', locals: { recipient: @new_recipient }) %>

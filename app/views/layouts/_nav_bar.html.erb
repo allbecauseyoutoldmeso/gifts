@@ -2,7 +2,6 @@
   <% if current_user.present? %>
     <%= link_to(t('.upcoming_events'), upcoming_events_path, class: 'nav-item') %>
     <%= link_to(t('.events'), events_path, class: 'nav-item') %>
-    <%= link_to(t('.recipients'), recipients_path, class: 'nav-item') %>
     <%= button_to(
       t('.log_out'),
       delete_user_sessions_path,

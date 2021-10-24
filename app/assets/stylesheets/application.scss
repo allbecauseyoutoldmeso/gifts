@@ -62,10 +62,6 @@ h1 {
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
 input {
   font-family: inherit;
 }
@@ -161,4 +157,8 @@ table {
   border-collapse: separate;
   margin-bottom: 15px;
   border-spacing: 15px;
+}
+
+.hidden {
+  display: none;
 }

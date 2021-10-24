@@ -18,38 +18,35 @@ en:
       title: Upcoming Events
   helpers:
     submit:
-      event:
+      event_presenter:
         create: Add
       event_search:
         create: Search
       present:
         create: Add Present
         delete: Delete
-      recipient:
-        create: Add Person
       user_session:
         create: Log In
   layouts:
     nav_bar:
       events: Manage Events
       log_out: Log Out
-      recipients: People
       upcoming_events: Upcoming Events
   presents:
     index:
       delete: Delete
       title: Presents for %{recipient} (%{event})
-  recipients:
-    index:
-      title: People
   simple_form:
     labels:
       event:
+        state: All Done?
+      event_presenter:
         date: When
         name: What
+        new_recipient: Someone New
         recipient_id: Who
+        recipient_name: Who
         recurring: Recurring
-        state: All Done?
       event_search:
         end_date: To
         name: Event
