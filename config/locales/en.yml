@@ -49,6 +49,7 @@ en:
         name: What
         recipient_id: Who
         recurring: Recurring
+        state: All Done?
       event_search:
         end_date: To
         name: Event

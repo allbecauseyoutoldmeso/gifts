@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post :delete, on: :collection
   end
 
-  resources :events, only: %i[index create] do
+  resources :events, only: %i[index create update] do
     get :upcoming, on: :collection
     resources :presents, only: %i[index create destroy]
   end

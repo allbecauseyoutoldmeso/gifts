@@ -16,9 +16,17 @@ class EventsController < ApplicationController
     render(json: { html: render_to_string('events/index') })
   end
 
+  def update
+    event = current_user.events.find(params[:id])
+    event.update(event_params)
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:recipient_id, :name, :date, :recurring)
+    params
+      .require(:event)
+      .permit(:recipient_id, :name, :date, :recurring, :state)
+      .tap { |params| params[:state] = params[:state].to_i }
   end
 end

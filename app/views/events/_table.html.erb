@@ -10,6 +10,9 @@
           event_presents_path(event)
         ) %>
       <% end %>
+      <%= content_tag(:td) do %>
+        <%= render(partial: 'events/done', locals: { event: event }) %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

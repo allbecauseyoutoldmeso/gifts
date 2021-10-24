@@ -1,0 +1,15 @@
+<%= simple_form_for(
+  event,
+  html: {
+    data: {
+      action: 'change->requests#submitForm'
+    }
+  }
+) do |form| %>
+  <%= form.input(
+    :state,
+    as: :boolean,
+    input_html: { checked: event.done? },
+    label: false
+  ) %>
+<% end %>

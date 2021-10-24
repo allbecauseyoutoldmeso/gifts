@@ -92,6 +92,11 @@ input[type=submit] {
 label {
   margin-right: 30px;
   width: 50px;
+
+  &.checkbox {
+    margin: 0;
+    width: fit-content;
+  }
 }
 
 main {

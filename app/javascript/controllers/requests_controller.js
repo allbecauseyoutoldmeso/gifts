@@ -11,8 +11,14 @@ export default class extends Controller {
       url: form.action,
       data: new FormData(form),
       success: (data) => {
-        this.element.outerHTML = data.html
+        this.updateView(data.html)
       }
     })
+  }
+
+  updateView(html) {
+    if (!!html) {
+      this.element.outerHTML = html
+    }
   }
 }

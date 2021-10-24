@@ -11,4 +11,6 @@ class Event < ApplicationRecord
   scope :upcoming, lambda {
     where(date: Date.current..UPCOMING_MONTHS.months.from_now).order(:date)
   }
+
+  enum state: { pending: 0, done: 1 }
 end

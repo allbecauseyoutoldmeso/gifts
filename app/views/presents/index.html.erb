@@ -2,19 +2,7 @@
   :h1,
   t('.title', recipient: @event.recipient.name, event: @event.name)
 ) %>
-<%= content_tag(:table) do %>
-  <% @presents.each do |present| %>
-    <%= content_tag(:tr) do %>
-      <%= content_tag(:td, present.name) %>
-      <%= content_tag(:td) do %>
-        <%= render(
-          partial: 'delete',
-          locals: { event: @event, present: present }
-        ) %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
+<%= render(partial: 'table', locals: { event: @event, presents: @presents }) %>
 <%= render(
   partial: 'form',
   locals: { event: @event, present: @new_present }
