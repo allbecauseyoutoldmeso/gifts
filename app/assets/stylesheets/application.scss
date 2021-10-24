@@ -58,6 +58,10 @@ button {
   font-family: inherit;
 }
 
+.edit_event {
+  font-size: 10px;
+}
+
 h1 {
   text-align: center;
 }
@@ -156,9 +160,17 @@ main {
 table {
   border-collapse: separate;
   margin-bottom: 15px;
-  border-spacing: 15px;
+  border-spacing: 8px;
+
+  @media (min-width: 600px) {
+    border-spacing: 15px;
+  }
 }
 
 .hidden {
   display: none;
+}
+
+.state-option {
+  font-size: 10px;
 }

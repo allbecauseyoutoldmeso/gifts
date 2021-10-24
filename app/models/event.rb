@@ -12,5 +12,5 @@ class Event < ApplicationRecord
     where(date: Date.current..UPCOMING_MONTHS.months.from_now).order(:date)
   }
 
-  enum state: { pending: 0, done: 1 }
+  enum state: { pending: 0, purchased: 1, wrapped: 2, gifted: 3 }
 end

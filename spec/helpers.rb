@@ -18,7 +18,7 @@ module Helpers
     date.strftime(format)
   end
 
-  def t(*args)
-    I18n.t(*args)
+  def t(key, options = {})
+    I18n.t(key, **options)
   end
 end

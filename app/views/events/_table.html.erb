@@ -6,12 +6,12 @@
       <%= content_tag(:td, display_date(event.date)) %>
       <%= content_tag(:td) do %>
         <%= link_to(
-          t('events.index.presents'),
+          t('events.index.presents', count: event.presents.count),
           event_presents_path(event)
         ) %>
       <% end %>
       <%= content_tag(:td) do %>
-        <%= render(partial: 'events/done', locals: { event: event }) %>
+        <%= render(partial: 'events/edit_state', locals: { event: event }) %>
       <% end %>
     <% end %>
   <% end %>

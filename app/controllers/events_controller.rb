@@ -17,9 +17,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params
-      .require(:event)
-      .permit(:state)
-      .tap { |params| params[:state] = params[:state].to_i }
+    params.require(:event).permit(:state)
   end
 end
