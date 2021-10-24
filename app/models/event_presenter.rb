@@ -3,20 +3,13 @@
 class EventPresenter
   include ActiveModel::Model
   include Booleanable
+  include Presentable
 
   attr_accessor :recipient_name, :recipient_id
 
   boolean_attributes :new_recipient
 
-  delegate(
-    :name,
-    :name=,
-    :date,
-    :date=,
-    :recurring,
-    :recurring=,
-    to: :event
-  )
+  presented_attributes :name, :date, :recurring, source: :event
 
   validates :name, :date, presence: true
   validates :recipient_id, presence: true, unless: :new_recipient
@@ -41,10 +34,14 @@ class EventPresenter
   attr_reader :user, :event
 
   def recipient
-    @recipient ||= if new_recipient
-                     user.recipients.new(name: recipient_name)
-                   else
-                     user.recipients.find(recipient_id)
-                   end
+    @recipient ||= new_recipient ? build_recipient : find_recipient
+  end
+
+  def build_recipient
+    user.recipients.new(name: recipient_name)
+  end
+
+  def find_recipient
+    user.recipients.find(recipient_id)
   end
 end

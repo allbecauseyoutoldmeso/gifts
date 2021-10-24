@@ -18,7 +18,7 @@ shared_examples_for 'dateable' do
       end
     end
 
-    it 'accepts dates' do
+    it 'accepts date' do
       date = Date.current
 
       dateable_attributes.each do |attribute|

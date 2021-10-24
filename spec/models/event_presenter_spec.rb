@@ -8,6 +8,19 @@ describe EventPresenter do
     let(:booleanable_attributes) { %i[new_recipient] }
   end
 
+  it_behaves_like 'presentable' do
+    let(:presenter) { build(:event_presenter) }
+    let(:source) { presenter.send(:event) }
+
+    let(:attributes) do
+      {
+        name: 'Birthday',
+        date: Date.current,
+        recurring: true
+      }
+    end
+  end
+
   describe '#valid?' do
     it 'is true for factory' do
       event_presenter = build(:event_presenter)
