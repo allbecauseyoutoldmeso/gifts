@@ -10,18 +10,26 @@ $pink: #FF1493;
   flex-direction: row;
 }
 
-.error {
-  font-size: 12px;
+a {
   color: $pink;
 }
 
-a {
+.error {
+  font-size: 12px;
   color: $pink;
 }
 
 .event-actions {
   @include flex-direction-row;
   justify-content: center;
+}
+
+.event-management {
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: fit-content;
+  }
 }
 
 .event-search {

@@ -57,7 +57,7 @@ en:
         recurring: Recurring
       event_search:
         end_date: To
-        name: Event
+        name: What
         recipient_id: Who
         start_date: From
       user_session:

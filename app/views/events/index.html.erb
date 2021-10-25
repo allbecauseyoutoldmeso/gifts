@@ -1,5 +1,9 @@
 <%= content_tag(:h1, t('.title')) %>
-<%= content_tag(:div, data: { controller: 'show-hide' }) do %>
+<%= content_tag(
+  :div,
+  data: { controller: 'show-hide' },
+  class: 'event-management'
+) do %>
   <%= render(
     partial: 'events/actions',
     locals: {
