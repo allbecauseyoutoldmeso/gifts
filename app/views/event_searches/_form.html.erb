@@ -6,7 +6,7 @@
     }
   }
 ) do |form| %>
-  <%= form.input(:name) %>
+  <%= form.input(:event_type_id, collection: current_user.event_types) %>
   <%= form.input(:recipient_id, collection: current_user.recipients) %>
   <%= form.input(:start_date, as: :date, html5: true) %>
   <%= form.input(:end_date, as: :date, html5: true) %>

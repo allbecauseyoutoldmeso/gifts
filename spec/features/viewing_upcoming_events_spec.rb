@@ -8,14 +8,12 @@ feature 'viewing upcoming events', js: true do
     event_1 = create(
       :event,
       user: user,
-      date: 2.months.from_now,
-      name: 'New Year'
+      date: 2.months.from_now
     )
     event_2 = create(
       :event,
       user: user,
-      date: 4.months.from_now,
-      name: "St Patrick's Day"
+      date: 4.months.from_now
     )
 
     log_in(user)

@@ -1,20 +1,29 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['newRecipient', 'recipientId', 'recipientName']
+  static targets = ['newField', 'idField', 'nameField']
 
   connect() {
-    this.toggleRecipientFields()
+    if (this.idOptions().length <= 1) {
+      this.newFieldTarget.checked = true
+      this.hide(this.newFieldTarget.parentElement)
+    }
+
+    this.toggleNewFields()
   }
 
-  toggleRecipientFields() {
-    if (this.newRecipientTarget.checked) {
-      this.hide(this.recipientIdTarget)
-      this.show(this.recipientNameTarget)
+  toggleNewFields() {
+    if (this.newFieldTarget.checked) {
+      this.hide(this.idFieldTarget)
+      this.show(this.nameFieldTarget)
     } else {
-      this.hide(this.recipientNameTarget)
-      this.show(this.recipientIdTarget)
+      this.hide(this.nameFieldTarget)
+      this.show(this.idFieldTarget)
     }
+  }
+
+  idOptions() {
+    return this.idFieldTarget.querySelectorAll('option')
   }
 
   hide(target) {

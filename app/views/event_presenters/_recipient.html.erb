@@ -1,0 +1,30 @@
+<%= content_tag(
+  :div,
+  data: { controller: 'forms' },
+  class: 'select-or-add'
+) do %>
+  <%= form.input(
+    :recipient_id,
+    collection: current_user.recipients,
+    wrapper_html: {
+      data: { forms_target: 'idField' }
+    }
+  ) %>
+  <%= form.input(
+    :recipient_name,
+    wrapper_html: {
+      data: { forms_target: 'nameField' },
+      class: 'hidden'
+    }
+  ) %>
+  <%= form.input(
+    :new_recipient,
+    as: :boolean,
+    input_html: {
+      data: {
+        action: 'change->forms#toggleNewFields',
+        forms_target: 'newField'
+      }
+    }
+  ) %>
+<% end %>

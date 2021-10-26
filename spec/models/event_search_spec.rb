@@ -16,15 +16,19 @@ describe EventSearch do
   end
 
   describe '#events' do
-    it 'returns events filtered by case-insensitive name' do
+    it 'returns events filtered by event_type_id' do
       user = create(:user)
-      event_1 = create(:event, user: user, name: 'Christmas')
-      event_2 = create(:event, user: user, name: 'christmas')
-      event_3 = create(:event, user: user, name: 'CHRISTMAS')
-      _event_4 = create(:event, user: user, name: 'Birthday')
-      event_search = build(:event_search, user: user, name: 'Christmas')
+      event_type_1 = create(:event_type, name: 'Leaving Drinks')
+      event_1 = create(:event, event_type: event_type_1, user: user)
+      event_type_2 = create(:event_type, name: 'Wedding')
+      _event_2 = create(:event, event_type: event_type_2, user: user)
+      event_search = build(
+        :event_search,
+        user: user,
+        event_type_id: event_type_1.id
+      )
 
-      expect(event_search.results).to contain_exactly(event_1, event_2, event_3)
+      expect(event_search.results).to contain_exactly(event_1)
     end
 
     it 'returns events filtered by start date' do

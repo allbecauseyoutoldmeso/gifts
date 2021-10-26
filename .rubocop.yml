@@ -11,6 +11,9 @@ Style/GuardClause:
   Enabled: false
 Style/IfUnlessModifier:
   Enabled: false
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*
 Metrics/BlockLength:
   Exclude:
     - spec/**/*

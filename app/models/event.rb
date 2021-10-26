@@ -4,9 +4,12 @@ class Event < ApplicationRecord
   UPCOMING_MONTHS = 3
 
   belongs_to :recipient
+  belongs_to :event_type
   has_many :presents, dependent: :destroy
 
-  validates :name, :date, :recipient_id, presence: true
+  delegate :name, to: :event_type, allow_nil: true
+
+  validates :date, presence: true
 
   scope :upcoming, lambda {
     where(date: Date.current..UPCOMING_MONTHS.months.from_now).order(:date)

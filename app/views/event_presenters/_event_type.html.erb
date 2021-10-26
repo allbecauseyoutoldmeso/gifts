@@ -1,0 +1,30 @@
+<%= content_tag(
+  :div,
+  data: { controller: 'forms' },
+  class: 'select-or-add'
+) do %>
+  <%= form.input(
+    :event_type_id,
+    collection: current_user.event_types,
+    wrapper_html: {
+      data: { forms_target: 'idField' }
+    }
+  ) %>
+  <%= form.input(
+    :event_type_name,
+    wrapper_html: {
+      data: { forms_target: 'nameField' },
+      class: 'hidden'
+    }
+  ) %>
+  <%= form.input(
+    :new_event_type,
+    as: :boolean,
+    input_html: {
+      data: {
+        action: 'change->forms#toggleNewFields',
+        forms_target: 'newField'
+      }
+    }
+  ) %>
+<% end %>

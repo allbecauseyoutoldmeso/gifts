@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   has_many :recipients, dependent: :destroy
+  has_many :event_types, dependent: :destroy
   has_many :events, through: :recipients
 
   validates :email, :password, presence: true

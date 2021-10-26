@@ -3,35 +3,12 @@
   html: {
     data: {
       action: 'submit->requests#submitForm',
-      controller: 'forms'
+
     }
   }
 ) do |form| %>
-  <%= form.input(
-    :recipient_id,
-    collection: current_user.recipients,
-    wrapper_html: {
-      data: { forms_target: 'recipientId' }
-    }
-  ) %>
-  <%= form.input(
-    :recipient_name,
-    wrapper_html: {
-      data: { forms_target: 'recipientName' },
-      class: 'hidden'
-    }
-  ) %>
-  <%= form.input(
-    :new_recipient,
-    as: :boolean,
-    input_html: {
-      data: {
-        action: 'change->forms#toggleRecipientFields',
-        forms_target: 'newRecipient'
-      }
-    }
-  ) %>
-  <%= form.input(:name) %>
+  <%= render('event_presenters/recipient', form: form) %>
+  <%= render('event_presenters/event_type', form: form) %>
   <%= form.input(:date, as: :date, html5: true) %>
   <%= form.input(:recurring, as: :boolean) %>
   <%= form.submit %>

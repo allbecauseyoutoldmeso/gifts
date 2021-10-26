@@ -9,34 +9,12 @@ describe Event do
       expect(event.valid?).to eq(true)
     end
 
-    it 'is false if name is not present' do
-      event = build(:event, name: nil)
-      expect(event.valid?).to eq(false)
-
-      expect(
-        event.errors.messages[:name]
-      ).to contain_exactly(
-        t('errors.messages.blank')
-      )
-    end
-
     it 'is false if date is not present' do
       event = build(:event, date: nil)
       expect(event.valid?).to eq(false)
 
       expect(
         event.errors.messages[:date]
-      ).to contain_exactly(
-        t('errors.messages.blank')
-      )
-    end
-
-    it 'is false if recipient_id is not present' do
-      event = build(:event, recipient: nil)
-      expect(event.valid?).to eq(false)
-
-      expect(
-        event.errors.messages[:recipient_id]
       ).to contain_exactly(
         t('errors.messages.blank')
       )

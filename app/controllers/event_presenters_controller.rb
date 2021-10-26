@@ -15,11 +15,13 @@ class EventPresentersController < ApplicationController
 
   def event_presenter_params
     params.require(:event_presenter).permit(
-      :recipient_id,
-      :new_recipient,
-      :recipient_name,
-      :name,
       :date,
+      :event_type_id,
+      :event_type_name,
+      :new_event_type,
+      :new_recipient,
+      :recipient_id,
+      :recipient_name,
       :recurring
     )
   end

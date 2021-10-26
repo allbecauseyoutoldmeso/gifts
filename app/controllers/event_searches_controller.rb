@@ -16,6 +16,6 @@ class EventSearchesController < ApplicationController
   def event_search_params
     params
       .require(:event_search)
-      .permit(:recipient_id, :name, :start_date, :end_date)
+      .permit(:recipient_id, :event_type_id, :start_date, :end_date)
   end
 end

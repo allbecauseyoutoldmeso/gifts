@@ -50,14 +50,16 @@ en:
         state: All Done?
       event_presenter:
         date: When
-        name: What
+        event_type_id: What
+        event_type_name: What
+        new_event_type: Something Else
         new_recipient: Someone New
         recipient_id: Who
         recipient_name: Who
         recurring: Recurring
       event_search:
         end_date: To
-        name: What
+        event_type_id: What
         recipient_id: Who
         start_date: From
       user_session:

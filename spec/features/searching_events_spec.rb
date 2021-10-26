@@ -3,15 +3,20 @@
 require 'rails_helper'
 
 feature 'searching events', js: true do
-  scenario 'user searches by name' do
+  scenario 'user searches by event_type' do
     user = create(:user)
-    event_1 = create(:event, user: user, name: 'Birthday')
-    event_2 = create(:event, user: user, name: 'New Year')
+    event_type_1 = create(:event_type, name: 'House Warming', user: user)
+    event_1 = create(:event, user: user, event_type: event_type_1)
+    event_type_2 = create(:event_type, name: 'Engagement', user: user)
+    event_2 = create(:event, user: user, event_type: event_type_2)
 
     log_in(user)
     click_link(t('layouts.nav_bar.events'))
     click_button(t('events.index.search_events'))
-    fill_in(t('simple_form.labels.event_search.name'), with: 'Birthday')
+    select(
+      event_type_1.name,
+      from: t('simple_form.labels.event_search.event_type_id')
+    )
     click_button(t('helpers.submit.event_search.create'))
 
     expect(page).to have_selector('td', text: event_1.name)
@@ -25,7 +30,7 @@ feature 'searching events', js: true do
   scenario 'user searches by start_date' do
     user = create(:user)
     event_1 = create(:event, user: user, date: Date.yesterday)
-    event_2 = create(:event, user: user, name: Date.tomorrow)
+    event_2 = create(:event, user: user, date: Date.tomorrow)
 
     log_in(user)
     click_link(t('layouts.nav_bar.events'))
@@ -47,7 +52,7 @@ feature 'searching events', js: true do
   scenario 'user searches by end_date' do
     user = create(:user)
     event_1 = create(:event, user: user, date: Date.yesterday)
-    event_2 = create(:event, user: user, name: Date.tomorrow)
+    event_2 = create(:event, user: user, date: Date.tomorrow)
 
     log_in(user)
     click_link(t('layouts.nav_bar.events'))

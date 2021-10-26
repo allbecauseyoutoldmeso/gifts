@@ -136,6 +136,14 @@ main {
   }
 }
 
+.select-or-add {
+  @include flex-direction-column;
+
+  @media (min-width: 600px) {
+    @include flex-direction-row;
+  }
+}
+
 .show-hide-button {
   border: none;
   background: none;
