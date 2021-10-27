@@ -6,6 +6,7 @@ class EventSearchesController < ApplicationController
   def create
     @event_search = EventSearch.new(current_user)
     @event_search.attributes = event_search_params
+    @event_search.valid?
     @events = @event_search.results.order(created_at: :desc)
     @show_event_search_form = true
     render(json: { html: render_to_string('events/index') })

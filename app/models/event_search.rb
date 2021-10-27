@@ -8,6 +8,8 @@ class EventSearch
 
   date_attributes :start_date, :end_date
 
+  validate :end_date_not_before_start_date
+
   def initialize(user)
     @user = user
   end
@@ -39,5 +41,11 @@ class EventSearch
 
   def by_recipient_id(events)
     events.where(recipient_id: recipient_id)
+  end
+
+  def end_date_not_before_start_date
+    if start_date.present? && end_date&.before?(start_date)
+      errors.add(:end_date, :before_start_date)
+    end
   end
 end

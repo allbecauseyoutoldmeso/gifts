@@ -21,7 +21,7 @@ FactoryBot.define do
       'Opposite Day',
       'Pi Day',
       'Record Store Day',
-      'Singles Awareness Day ',
+      'Singles Awareness Day',
       'Star Wars Day',
       'Super Bowl Sunday',
       'Sweetest Day',

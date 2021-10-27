@@ -93,4 +93,27 @@ feature 'searching events', js: true do
 
     expect(page).to have_selector('td', text: event_2.name)
   end
+
+  scenario 'user submits end_date earlier than start_date' do
+    user = create(:user)
+
+    log_in(user)
+    click_link(t('layouts.nav_bar.events'))
+    click_button(t('events.index.search_events'))
+    fill_in(
+      t('simple_form.labels.event_search.start_date'),
+      with: input_date(Date.tomorrow)
+    )
+    fill_in(
+      t('simple_form.labels.event_search.end_date'),
+      with: input_date(Date.yesterday)
+    )
+    click_button(t('helpers.submit.event_search.create'))
+
+    expect(page).to have_content(
+      t(
+        'activemodel.errors.models.event_search.attributes.end_date.before_start_date'
+      )
+    )
+  end
 end

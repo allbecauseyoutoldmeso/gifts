@@ -13,6 +13,32 @@ describe EventSearch do
       event_search = build(:event_search)
       expect(event_search.valid?).to eq(true)
     end
+
+    it 'is false if end date is before start date' do
+      event_search = build(
+        :event_search,
+        start_date: Date.tomorrow,
+        end_date: Date.yesterday
+      )
+
+      expect(event_search.valid?).to eq(false)
+
+      expect(event_search.errors.messages[:end_date]).to contain_exactly(
+        t(
+          'activemodel.errors.models.event_search.attributes.end_date.before_start_date'
+        )
+      )
+    end
+
+    it 'is true if end date is after start date' do
+      event_search = build(
+        :event_search,
+        start_date: Date.yesterday,
+        end_date: Date.tomorrow
+      )
+
+      expect(event_search.valid?).to eq(true)
+    end
   end
 
   describe '#events' do
