@@ -11,7 +11,17 @@ $pink: #FF1493;
 }
 
 a {
-  color: $pink;
+  color: black;
+  text-decoration: none;
+}
+
+.cell {
+  display: table-cell;
+}
+
+.delete-button {
+  background: none;
+  border: none;
 }
 
 .error {
@@ -54,7 +64,7 @@ form {
 }
 
 body {
-  font-family: 'Averia Serif Libre', cursive;
+  font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .boolean {
@@ -67,11 +77,13 @@ button {
 }
 
 .edit_event {
-  font-size: 10px;
+  @include flex-direction-row;
+  justify-content: flex-start;
 }
 
 h1 {
   text-align: center;
+  margin: 10px 5px 0;
 }
 
 input {
@@ -136,6 +148,24 @@ main {
   }
 }
 
+.new_present {
+  @include flex-direction-column;
+  align-items: center;
+}
+
+.present_name {
+  @include flex-direction-column;
+  align-items: center;
+}
+
+.row {
+  display: table-row;
+}
+
+select {
+  font-family: inherit;
+}
+
 .select-or-add {
   @include flex-direction-column;
 
@@ -147,7 +177,7 @@ main {
 .show-hide-button {
   border: none;
   background: none;
-  margin: 0 15px;
+  margin: 10px 15px 5px 15px;
 
   &:hover {
     text-decoration: underline;
@@ -173,20 +203,19 @@ main {
  }
 }
 
-table {
-  border-collapse: separate;
-  margin-bottom: 15px;
-  border-spacing: 8px;
+.state-option {
+  font-size: 10px;
+}
 
-  @media (min-width: 600px) {
-    border-spacing: 15px;
-  }
+.table {
+  display: table;
+  border-spacing: 15px;
+}
+
+.event_state {
+  margin: 0;
 }
 
 .hidden {
   display: none;
-}
-
-.state-option {
-  font-size: 10px;
 }

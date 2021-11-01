@@ -4,7 +4,7 @@
       <%= content_tag(:td, present.name) %>
       <%= content_tag(:td) do %>
         <%= render(
-          partial: 'delete',
+          partial: 'presents/delete',
           locals: { event: event, present: present }
         ) %>
       <% end %>

@@ -7,8 +7,6 @@ class Event < ApplicationRecord
   belongs_to :event_type
   has_many :presents, dependent: :destroy
 
-  delegate :name, to: :event_type, allow_nil: true
-
   validates :date, presence: true
 
   scope :upcoming, lambda {
@@ -16,4 +14,14 @@ class Event < ApplicationRecord
   }
 
   enum state: { pending: 0, purchased: 1, wrapped: 2, gifted: 3 }
+
+  alias_attribute :when, :date
+
+  def who
+    recipient.name
+  end
+
+  def what
+    event_type.name
+  end
 end

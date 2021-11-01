@@ -35,4 +35,25 @@ describe Event do
       )
     end
   end
+
+  describe '#who' do
+    it 'returns recipient name' do
+      event = create(:event)
+      expect(event.who).to eq(event.recipient.name)
+    end
+  end
+
+  describe '#what' do
+    it 'returns event_type name' do
+      event = create(:event)
+      expect(event.what).to eq(event.event_type.name)
+    end
+  end
+
+  describe '#when' do
+    it 'returns date' do
+      event = create(:event)
+      expect(event.when).to eq(event.date)
+    end
+  end
 end

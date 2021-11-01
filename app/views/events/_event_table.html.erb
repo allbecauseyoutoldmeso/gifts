@@ -1,0 +1,24 @@
+<%= content_tag(:div, class: 'table event-table') do %>
+  <%= content_tag(:div, class: 'row') do %>
+    <%= content_tag(:div, t('events.show.who'), class: 'cell') %>
+    <%= content_tag(:div, event.who, class: 'cell') %>
+  <% end %>
+  <%= content_tag(:div, class: 'row') do %>
+    <%= content_tag(:div, t('events.show.what'), class: 'cell') %>
+    <%= content_tag(:div, event.what, class: 'cell') %>
+  <% end %>
+  <%= content_tag(:div, class: 'row') do %>
+    <%= content_tag(:div, t('events.show.when'), class: 'cell') %>
+    <%= content_tag(:div, display_date(event.when), class: 'cell') %>
+  <% end %>
+  <%= content_tag(:div, class: 'row') do %>
+    <%= content_tag(:div, t('events.show.recurring'), class: 'cell') %>
+    <%= content_tag(:i, nil, class: boolean_icon_class(event.recurring)) %>
+  <% end %>
+  <%= content_tag(:div, class: 'row') do %>
+    <%= content_tag(:div, t('events.show.state'), class: 'cell') %>
+    <%= content_tag(:div, class: 'cell') do %>
+      <%= render(partial: 'events/edit_state', locals: { event: event }) %>
+    <% end %>
+  <% end %>
+<% end %>

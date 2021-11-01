@@ -26,12 +26,15 @@ feature 'creating events', js: true do
     )
     click_button(t('helpers.submit.event_presenter.create'))
 
-    expect(page).to have_selector('td', text: event_type_name)
+    expect(page).to have_selector('div', class: 'cell', text: event_type_name)
+
     expect(page).to have_selector(
-      'td',
+      'div',
+      class: 'cell',
       text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
-    expect(page).to have_selector('td', text: recipient_name)
+
+    expect(page).to have_selector('div', class: 'cell', text: recipient_name)
   end
 
   scenario 'user adds event with existing recipient and event_type' do
@@ -58,12 +61,15 @@ feature 'creating events', js: true do
     )
     click_button(t('helpers.submit.event_presenter.create'))
 
-    expect(page).to have_selector('td', text: event_type.name)
+    expect(page).to have_selector('div', class: 'cell', text: event_type.name)
+
     expect(page).to have_selector(
-      'td',
+      'div',
+      class: 'cell',
       text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
-    expect(page).to have_selector('td', text: recipient.name)
+
+    expect(page).to have_selector('div', class: 'cell', text: recipient.name)
   end
 
   scenario 'user adds event with new recipient and event_type' do
@@ -93,12 +99,15 @@ feature 'creating events', js: true do
     )
     click_button(t('helpers.submit.event_presenter.create'))
 
-    expect(page).to have_selector('td', text: event_type_name)
+    expect(page).to have_selector('div', class: 'cell', text: event_type_name)
+
     expect(page).to have_selector(
-      'td',
+      'div',
+      class: 'cell',
       text: event_date.strftime("#{event_date.day.ordinalize} %b %y")
     )
-    expect(page).to have_selector('td', text: recipient_name)
+
+    expect(page).to have_selector('div', class: 'cell', text: recipient_name)
   end
 
   scenario 'user submits form with blank fields' do

@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 require 'helpers'
+require 'support/holidays'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
@@ -23,6 +24,8 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Helpers
 end
+
+Capybara.enable_aria_label = true
 
 Capybara.register_driver :chrome do |app|
   options = ::Selenium::WebDriver::Chrome::Options.new

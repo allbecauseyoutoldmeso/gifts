@@ -1,0 +1,11 @@
+<%= content_tag(:h1, t('.title')) %>
+<%= render(partial: 'events/event_table', locals: { event: @event }) %>
+<%= content_tag(:h2, t('.presents')) %>
+<%= render(
+  partial: 'presents/table',
+  locals: { event: @event, presents: @event.presents.all }
+) %>
+<%= render(
+  partial: 'presents/form',
+  locals: { event: @event, present: @new_present }
+) %>

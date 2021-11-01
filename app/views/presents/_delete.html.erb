@@ -4,5 +4,11 @@
   method: :delete,
   data: { action: 'click->requests#submitForm' }
 ) do |form| %>
-  <%= form.submit(t('presents.index.delete')) %>
+  <%= form.button(
+    :button,
+    class: 'delete-button',
+    aria: { label: t('helpers.submit.present.delete') }
+  ) do %>
+    <%= content_tag(:i, nil, class: 'far fa-times-circle') %>
+  <% end %>
 <% end %>

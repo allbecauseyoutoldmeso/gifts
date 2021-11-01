@@ -23,9 +23,16 @@ en:
     index:
       add_event: Add Event
       clear_filters: Clear Filters
-      presents: Presents (%{count})
       search_events: Search Events
       title: Manage Events
+    show:
+      presents: Presents
+      recurring: Recurring?
+      state: State
+      title: Event Details
+      what: What
+      when: When
+      who: Who
     upcoming:
       title: Upcoming Events
   helpers:
@@ -44,10 +51,6 @@ en:
       events: Manage Events
       log_out: Log Out
       upcoming_events: Upcoming Events
-  presents:
-    index:
-      delete: Delete
-      title: Presents for %{recipient} (%{event})
   simple_form:
     labels:
       event:

@@ -1,0 +1,12 @@
+<%= content_tag(:div, class: 'table') do %>
+  <% events.each do |event| %>
+    <%= link_to(event_path(event), class: 'row') do %>
+      <%= content_tag(:div, event.who, class: 'cell') %>
+      <%= content_tag(:div, event.what, class: 'cell') %>
+      <%= content_tag(:div, display_date(event.when), class: 'cell') %>
+      <%= content_tag(:div, class: 'cell') do %>
+        <%= content_tag(:i, nil, class: state_icon_class(event.state)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

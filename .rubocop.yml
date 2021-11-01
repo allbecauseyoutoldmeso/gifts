@@ -12,6 +12,7 @@ Style/GuardClause:
 Style/IfUnlessModifier:
   Enabled: false
 Metrics/MethodLength:
+  ExcludedMethods: [holidays]
   Exclude:
     - db/migrate/*
 Metrics/BlockLength:

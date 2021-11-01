@@ -15,7 +15,7 @@ describe RecurringEventFactory do
         recurring: true,
         recipient: event.recipient,
         date: Date.tomorrow,
-        name: event.name,
+        event_type: event.event_type,
         presents: []
       )
     end

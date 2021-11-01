@@ -10,11 +10,10 @@ feature 'deleting presents', js: true do
     present_2 = create(:present, event: event)
 
     log_in(user)
-    visit(event_presents_path(event))
-    present_1_row = find('tr', text: present_1.name)
+    visit(event_path(event))
 
-    within(present_1_row) do
-      click_button(t('presents.index.delete'))
+    within("#edit_present_#{present_1.id}") do
+      click_button(t('helpers.submit.present.delete'))
     end
 
     expect(page).not_to have_selector('td', text: present_1.name)

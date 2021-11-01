@@ -9,21 +9,19 @@ feature 'updating_event_states', js: true do
 
     log_in(user)
     click_link(t('layouts.nav_bar.events'))
+    click_link(event.what)
 
-    within("#edit_event_#{event.id}") do
-      select(
-        t('activerecord.attributes.event.states.purchased'),
-        from: 'event_state'
-      )
-    end
+    select(
+      t('activerecord.attributes.event.states.purchased'),
+      from: 'event_state'
+    )
 
     click_link(t('layouts.nav_bar.events'))
 
-    within("#edit_event_#{event.id}") do
-      expect(page).to have_select(
-        'event_state',
-        selected: t('activerecord.attributes.event.states.purchased')
-      )
+    event_row = find('a', class: 'row', text: event.what)
+
+    within(event_row) do
+      expect(page).to have_selector('i', class: 'fa-shopping-bag')
     end
   end
 end
