@@ -7,6 +7,12 @@ class EventPresentersController < ApplicationController
     event_presenter = EventPresenter.new(current_user)
     event_presenter.attributes = event_presenter_params
     @new_event_presenter = event_presenter unless event_presenter.save
+
+    puts 'DUBUGGING 3-------------------------------------------'
+    puts event_presenter.valid?
+    puts event_presenter.errors.messages
+    puts 'DUBUGGING 3-------------------------------------------'
+
     @show_new_event_form = true
     render(json: { html: render_to_string('events/index') })
   end
